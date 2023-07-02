@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 class PathPainter extends CustomPainter {
@@ -22,7 +24,20 @@ class PathPainter extends CustomPainter {
     path.lineTo(size.width / 2, size.height / 4);
     path.moveTo(size.width / 2, size.height / 4);
     path.lineTo(0, size.height / 2);
-    path.moveTo(0, size.height / 2);
+    path.moveTo(size.width / 2, size.height / 2);
+
+    num degToRad(num deg) => deg * (pi / 180.0);
+
+    //? ArcTo takes a 1. Rect (Circle , Oval , etc) 2. Start angle 3. Sweep angle
+    path.arcTo(
+      Rect.fromCircle(
+        center: Offset(size.width / 2, size.height / 2),
+        radius: size.width / 10,
+      ),
+      degToRad(0).toDouble(),
+      degToRad(-180).toDouble(),
+      true,
+    );
 
     //! Close the path
     path.close();

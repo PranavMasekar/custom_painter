@@ -36,7 +36,7 @@ class MyCustomPainter extends StatelessWidget {
         height: MediaQuery.of(context).size.height,
         padding: const EdgeInsets.all(10),
         child: CustomPaint(
-          painter: EyePainter(),
+          painter: PathPainter(),
         ),
       ),
     );
