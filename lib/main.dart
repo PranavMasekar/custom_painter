@@ -31,9 +31,10 @@ class MyCustomPainter extends StatelessWidget {
         title: const Text("Flutter Custom Painter"),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
-      body: SizedBox(
+      body: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
+        padding: const EdgeInsets.all(10),
         child: CustomPaint(
           painter: PathPainter(),
         ),
