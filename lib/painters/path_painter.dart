@@ -9,9 +9,14 @@ class PathPainter extends CustomPainter {
       ..strokeWidth = 5.0;
 
     Path path = Path();
-    //! Moves starting point to center of screen
+
+    //? Moves starting point to center of screen
     path.moveTo(size.width / 2, size.height / 2);
+
+    //? Draws line from start point to specified point
     path.lineTo(size.width, size.height / 2);
+
+    //! Close the path
     path.close();
     canvas.drawPath(path, paint);
   }
