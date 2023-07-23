@@ -27,17 +27,31 @@ class MyCustomPainter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white.withOpacity(0.85),
       appBar: AppBar(
         title: const Text("Flutter Custom Painter"),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
-      body: Container(
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
-        padding: const EdgeInsets.all(10),
-        child: CustomPaint(
-          painter: QuadrantPainter(),
-        ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Container(
+            width: 300,
+            height: 500,
+            margin: const EdgeInsets.all(30),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(22),
+            ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(22),
+              child: CustomPaint(
+                painter: TemplateSeven(),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
