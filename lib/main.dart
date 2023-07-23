@@ -47,7 +47,7 @@ class MyCustomPainter extends StatelessWidget {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(22),
               child: CustomPaint(
-                painter: TemplateSeven(),
+                painter: TemplateTen(),
               ),
             ),
           ),
