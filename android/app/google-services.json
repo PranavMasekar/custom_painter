@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "958818921407",
+    "project_id": "flutter-remote-config-abd66",
+    "storage_bucket": "flutter-remote-config-abd66.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:958818921407:android:b6ef937f40a6690df80f0a",
+        "android_client_info": {
+          "package_name": "com.example.custom_painter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "958818921407-n30glh0179tmedptg8386qt9brng82fu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzxhtBkh15CJ3eDpE9uUflbaemj2aCVN0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "958818921407-n30glh0179tmedptg8386qt9brng82fu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

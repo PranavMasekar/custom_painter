@@ -1,8 +1,15 @@
+import 'package:custom_painter/home_page.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'painters/painters.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'firebase_options.dart';
 
-void main() {
-  runApp(const MyApp());
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -10,49 +17,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Custom Painter',
+      title: 'Firebase Remote Config',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home: const MyCustomPainter(),
-    );
-  }
-}
-
-class MyCustomPainter extends StatelessWidget {
-  const MyCustomPainter({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white.withOpacity(0.85),
-      appBar: AppBar(
-        title: const Text("Flutter Custom Painter"),
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-      ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Container(
-            width: 300,
-            height: 500,
-            margin: const EdgeInsets.all(30),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(22),
-            ),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(22),
-              child: CustomPaint(
-                painter: TemplateTen(),
-              ),
-            ),
-          ),
-        ],
-      ),
+      home: const HomePage(),
     );
   }
 }
